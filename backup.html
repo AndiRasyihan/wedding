@@ -67,6 +67,7 @@
         left: 0;
         right: 0;
         bottom: 0;
+        /* UPDATE: Background diganti dengan pemandangan alam */
         background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
           url("https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
         background-size: cover;
@@ -88,7 +89,7 @@
         margin: 15px auto;
       }
 
-      /* STYLING ACARA */
+      /* STYLING ACARA (SAVE THE DATE) */
       .date-box {
         background-color: var(--box-bg);
         color: white;
@@ -122,8 +123,7 @@
         background: rgba(255, 255, 255, 0.5);
         position: relative;
       }
-      .btn-location,
-      .btn-rsvp {
+      .btn-location {
         background-color: #666;
         color: white;
         border: none;
@@ -133,75 +133,11 @@
         letter-spacing: 1px;
         margin-top: 10px;
         border-radius: 4px;
-        transition: 0.3s;
       }
-      .btn-location:hover,
-      .btn-rsvp:hover {
+      .btn-location:hover {
         background-color: #444;
         color: white;
       }
-
-      /* RSVP Section */
-      .rsvp-card {
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 10px;
-        padding: 30px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      /* --- STYLE TAMBAHAN KHUSUS PILIHAN HADIR/TIDAK (Radio Custom) --- */
-      .option-group {
-        display: flex;
-        gap: 15px;
-        justify-content: center;
-        margin-bottom: 20px;
-      }
-
-      /* Sembunyikan radio button asli */
-      .option-input {
-        display: none;
-      }
-
-      /* Tampilan Tombol Pilihan */
-      .option-label {
-        flex: 1;
-        padding: 15px;
-        border: 2px solid #ccc;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        background: white;
-        color: #555;
-        font-weight: 600;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .option-label i {
-        font-size: 1.5rem;
-        margin-bottom: 5px;
-      }
-
-      /* Efek saat tombol "Hadir" dipilih */
-      #hadir:checked + .lbl-hadir {
-        border-color: #28a745;
-        background-color: #e8f5e9;
-        color: #28a745;
-        transform: scale(1.05);
-        box-shadow: 0 5px 15px rgba(40, 167, 69, 0.2);
-      }
-
-      /* Efek saat tombol "Tidak Hadir" dipilih */
-      #tidak:checked + .lbl-tidak {
-        border-color: #dc3545;
-        background-color: #f8d7da;
-        color: #dc3545;
-        transform: scale(1.05);
-        box-shadow: 0 5px 15px rgba(220, 53, 69, 0.2);
-      }
-      /* ------------------------------------------------------------- */
 
       /* Utilities */
       .section-padding {
@@ -239,13 +175,7 @@
         <h4>The Wedding of</h4>
         <h1 class="display-1 mb-4">Asyirah & Asrori</h1>
         <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
-        <div class="mb-4">
-          <strong
-            id="nama-tamu"
-            style="font-size: 1.5rem; text-transform: capitalize"
-            >Tamu Undangan</strong
-          >
-        </div>
+        <div class="mb-4"><strong>Tamu Undangan</strong></div>
         <button
           class="btn btn-light btn-lg rounded-pill px-4"
           onclick="bukaUndangan()"
@@ -275,9 +205,16 @@
             >
               "Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan
               pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu
-              merasa tenteram kepadanya..."
+              merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta
+              dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar
+              terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
             </p>
             <p class="mt-3 fw-bold">( Surat Ar-Ruum : 21 )</p>
+            <p class="mt-4">
+              Maha Suci Allah yang telah menciptakan makhluk-Nya
+              berpasang-pasangan.<br />Ya Allah semoga ridho-Mu tercurah
+              mengiringi pernikahan kami :
+            </p>
           </div>
 
           <div class="row justify-content-center mt-5 gy-4">
@@ -334,27 +271,91 @@
               class="mx-auto"
               style="width: 100px; height: 3px; background: #333; opacity: 1"
             />
-            <h4 class="fw-bold mt-4">Sabtu, 10 Januari 2026</h4>
+            <p class="mt-3 px-md-5">
+              Dengan penuh rasa hormat kami mengharapkan kehadiran
+              Bapak/Ibu/Saudara/i sekalian pada Acara Pernikahan kami yang akan
+              kami laksanakan pada :
+            </p>
+            <h4 class="fw-bold mt-2">Sabtu, 10 Januari 2026</h4>
           </div>
 
           <div class="row justify-content-center mb-5" data-aos="fade-up">
+            <h2 class="event-title">Akad Nikah</h2>
             <div class="col-md-8">
-              <h2 class="event-title mb-3">Akad Nikah</h2>
-              <p>Pukul 10:00 WITA - Selesai</p>
+              <div class="row align-items-center">
+                <div class="col-4 col-md-3">
+                  <div class="date-box">
+                    <span>Sabtu,</span>
+                    <span class="date-number">10</span>
+                    <span class="date-month">Januari</span>
+                    <span>2026</span>
+                  </div>
+                </div>
+                <div class="col-8 col-md-9 text-start ps-4">
+                  <h3 class="mb-0" style="font-family: 'Cinzel', serif">
+                    10:00 - Selesai
+                  </h3>
+                  <hr
+                    style="width: 50px; border-top: 3px solid #333; opacity: 1"
+                  />
+                </div>
+              </div>
 
-              <h2 class="event-title mb-3 mt-4">Resepsi</h2>
-              <p>Pukul 11:00 WITA - Selesai</p>
-
-              <div class="location-box mt-4">
+              <div class="location-box">
                 <i class="fas fa-map-marker-alt fa-2x mb-3 text-secondary"></i>
                 <h5 style="font-family: 'Cinzel', serif; font-weight: bold">
                   Gedung Dr. Berbudi RS. Tadjuddin Chalid
                 </h5>
+                <p class="mb-1">Jl. Pajjaiang, Paccerakkang</p>
                 <p class="mb-2">
-                  Jl. Pajjaiang, Paccerakkang, Kec. Biringkanaya, Kota Makassar
+                  Kec. Biringkanaya, Kota Makassar, Sulawesi Selatan 90241
                 </p>
-                <a href="https://goo.gl/maps/PLACEHOLDER" target="_blank">
-                  <button class="btn-location">Buka Google Maps</button>
+                <a
+                  href="https://maps.app.goo.gl/qzrtMeKzrjUwvJMDA"
+                  target="_blank"
+                >
+                  <button class="btn-location">Location</button>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center mt-5" data-aos="fade-up">
+            <h2 class="event-title">Resepsi</h2>
+            <div class="col-md-8">
+              <div class="row align-items-center">
+                <div class="col-4 col-md-3">
+                  <div class="date-box">
+                    <span>Sabtu,</span>
+                    <span class="date-number">10</span>
+                    <span class="date-month">Januari</span>
+                    <span>2026</span>
+                  </div>
+                </div>
+                <div class="col-8 col-md-9 text-start ps-4">
+                  <h3 class="mb-0" style="font-family: 'Cinzel', serif">
+                    11:00 - Selesai
+                  </h3>
+                  <hr
+                    style="width: 50px; border-top: 3px solid #333; opacity: 1"
+                  />
+                </div>
+              </div>
+
+              <div class="location-box">
+                <i class="fas fa-map-marker-alt fa-2x mb-3 text-secondary"></i>
+                <h5 style="font-family: 'Cinzel', serif; font-weight: bold">
+                  Gedung Dr. Berbudi RS. Tadjuddin Chalid
+                </h5>
+                <p class="mb-1">Jl. Pajjaiang, Paccerakkang</p>
+                <p class="mb-2">
+                  Kec. Biringkanaya, Kota Makassar, Sulawesi Selatan 90241
+                </p>
+                <a
+                  href="https://maps.app.goo.gl/qzrtMeKzrjUwvJMDA"
+                  target="_blank"
+                >
+                  <button class="btn-location">Location</button>
                 </a>
               </div>
             </div>
@@ -390,113 +391,6 @@
         </div>
       </section>
 
-      <section class="section-padding text-center">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-6" data-aos="fade-up">
-              <h2 class="save-the-date-font mb-4">Konfirmasi Kehadiran</h2>
-              <div class="rsvp-card text-start">
-                <form id="rsvpForm" name="submit-to-google-sheet">
-                  <div class="mb-3">
-                    <label class="form-label fw-bold">Nama Tamu</label>
-                    <input
-                      type="text"
-                      class="form-control text-center"
-                      id="inputNama"
-                      name="Nama"
-                      placeholder="Nama Anda"
-                      required
-                      readonly
-                      style="background-color: #f0f0f0"
-                    />
-                    <small class="text-muted d-block text-center mt-1"
-                      >Nama terisi otomatis dari link undangan.</small
-                    >
-                  </div>
-
-                  <label class="form-label fw-bold mb-3 d-block text-center"
-                    >Apakah Anda akan hadir?</label
-                  >
-                  <div class="option-group">
-                    <input
-                      type="radio"
-                      class="option-input"
-                      id="hadir"
-                      name="Status"
-                      value="Hadir"
-                      required
-                    />
-                    <label class="option-label lbl-hadir" for="hadir">
-                      <i class="fas fa-check-circle"></i>
-                      <span>Hadir</span>
-                    </label>
-
-                    <input
-                      type="radio"
-                      class="option-input"
-                      id="tidak"
-                      name="Status"
-                      value="Tidak Hadir"
-                    />
-                    <label class="option-label lbl-tidak" for="tidak">
-                      <i class="fas fa-times-circle"></i>
-                      <span>Maaf, Tidak</span>
-                    </label>
-                  </div>
-
-                  <div class="mb-3">
-                    <label for="jumlah" class="form-label">Jumlah Orang</label>
-                    <input
-                      type="number"
-                      class="form-control text-center"
-                      id="inputJumlah"
-                      name="Jumlah"
-                      value="1"
-                      min="1"
-                      required
-                    />
-                  </div>
-
-                  <div class="mb-3">
-                    <label for="pesan" class="form-label">Ucapan & Doa</label>
-                    <textarea
-                      class="form-control"
-                      id="inputPesan"
-                      name="Pesan"
-                      rows="3"
-                      placeholder="Tulis ucapan selamat..."
-                    ></textarea>
-                  </div>
-
-                  <div class="d-grid mt-4">
-                    <button
-                      type="submit"
-                      class="btn-rsvp btn-kirim"
-                      style="background-color: var(--accent-color)"
-                    >
-                      <i class="fas fa-paper-plane me-2"></i> Konfirmasi
-                      Kehadiran
-                    </button>
-                    <button
-                      class="btn-rsvp btn-loading d-none"
-                      type="button"
-                      disabled
-                    >
-                      <span
-                        class="spinner-border spinner-border-sm"
-                        role="status"
-                        aria-hidden="true"
-                      ></span>
-                      Mengirim Data...
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <footer class="bg-dark text-white text-center py-5">
         <p>
           Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i kami ucapkan terima
@@ -511,35 +405,12 @@
     <script>
       AOS.init({ duration: 1000, once: true });
 
-      // 1. FUNGSI UNTUK MENGAMBIL NAMA DARI URL (VERSI HASH #)
-      // Agar bisa jalan di file lokal laptop tanpa error
-      // Contoh link: undangan.html#Rasyihan
-      let namaTamu = window.location.hash.substring(1);
-      namaTamu = decodeURIComponent(namaTamu); // Mengubah %20 jadi spasi
-
-      const namaContainer = document.getElementById("nama-tamu");
-      const inputNamaForm = document.getElementById("inputNama");
-
-      if (namaTamu) {
-        namaContainer.innerText = namaTamu;
-        inputNamaForm.value = namaTamu;
-      } else {
-        // Jika link dibuka tanpa nama, izinkan tamu ketik sendiri
-        inputNamaForm.removeAttribute("readonly");
-        inputNamaForm.style.backgroundColor = "white";
-      }
-
       function bukaUndangan() {
         document.getElementById("cover").style.transform = "translateY(-100%)";
         document.getElementById("main-content").style.display = "block";
+        // Pastikan file audio ada jika ingin autostop jalan
         var audio = document.getElementById("lagu");
-        if (audio) {
-          audio
-            .play()
-            .catch((error) =>
-              console.log("Autoplay blocked by browser policy")
-            );
-        }
+        if (audio) audio.play();
         window.scrollTo(0, 0);
       }
 
@@ -555,51 +426,7 @@
         }
       }
 
-      // 2. FUNGSI KIRIM KE GOOGLE SHEETS
-      // GANTI LINK DI BAWAH INI DENGAN LINK SCRIPT KAMU SENDIRI
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbyhqAd9swURgaRuOLX_n4oHBc_4dF1nj0lXaBcUWbUNT-Pw_jIzKKF885wwr1GybI7a/exec";
-
-      const form = document.forms["submit-to-google-sheet"];
-      const btnKirim = document.querySelector(".btn-kirim");
-      const btnLoading = document.querySelector(".btn-loading");
-
-      if (form) {
-        form.addEventListener("submit", (e) => {
-          e.preventDefault();
-
-          // Tampilkan tombol loading
-          btnKirim.classList.toggle("d-none");
-          btnLoading.classList.toggle("d-none");
-
-          fetch(scriptURL, { method: "POST", body: new FormData(form) })
-            .then((response) => {
-              // Sembunyikan loading
-              btnKirim.classList.toggle("d-none");
-              btnLoading.classList.toggle("d-none");
-
-              // Tampilkan Alert Sukses
-              alert(
-                "Terima kasih! Konfirmasi kehadiran Anda sudah kami terima."
-              );
-
-              // Reset form
-              form.reset();
-              // Kembalikan nama jika ada di link
-              if (namaTamu) inputNamaForm.value = namaTamu;
-            })
-            .catch((error) => {
-              console.error("Error!", error.message);
-              alert(
-                "Ups! Ada kesalahan saat mengirim data. Pastikan internet lancar."
-              );
-              btnKirim.classList.toggle("d-none");
-              btnLoading.classList.toggle("d-none");
-            });
-        });
-      }
-
-      // COUNTDOWN
+      // TANGGAL COUNTDOWN: 10 JANUARI 2026
       const weddingDate = new Date("Jan 10, 2026 10:00:00").getTime();
       const x = setInterval(function () {
         const now = new Date().getTime();
@@ -616,7 +443,9 @@
         document.getElementById("seconds").innerText = Math.floor(
           (distance % (1000 * 60)) / 1000
         );
-        if (distance < 0) clearInterval(x);
+        if (distance < 0) {
+          clearInterval(x);
+        }
       }, 1000);
     </script>
   </body>
