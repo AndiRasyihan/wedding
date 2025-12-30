@@ -24,25 +24,45 @@
         --accent-color: #b88e2f;
         --bg-color: #fdfcf0;
         --box-bg: #ffffff;
+
+        /* DEFINISI 3 FONT UTAMA */
+        --font-body: "Poppins", sans-serif;
+        --font-heading: "Cinzel", serif;
+        --font-script: "Great Vibes", cursive;
       }
 
       body {
-        font-family: "Poppins", sans-serif;
+        font-family: var(--font-body); /* Set global ke Poppins */
         background-color: var(--bg-color);
         color: #333;
         overflow-x: hidden;
         background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
       }
 
-      /* Typography */
+      /* --- FONT STYLE 1: SCRIPT/ESTETIK (Great Vibes) --- */
       h1,
       .font-aesthetic {
-        font-family: "Great Vibes", cursive;
+        font-family: var(--font-script);
         color: var(--primary-color);
-        font-size: 20px;
+        font-size: 20px; /* Base size */
       }
+
+      /* Khusus Nama Pengantin di Cover */
+      .cover-names {
+        font-family: var(--font-script);
+        font-weight: 400;
+      }
+
+      /* --- FONT STYLE 2: HEADING/SERIF (Cinzel) --- */
+      h2.event-title,
+      .bismillah,
+      .save-the-date-font,
+      .location-title,
+      .quran-font {
+        font-family: var(--font-heading);
+      }
+
       h2.event-title {
-        font-family: "Cinzel", serif;
         font-weight: 700;
         letter-spacing: 2px;
         border-bottom: 2px solid #333;
@@ -50,18 +70,18 @@
         padding-bottom: 5px;
         margin-bottom: 20px;
       }
+
       .bismillah {
-        font-family: "Cinzel", serif;
         font-weight: bold;
         font-size: 1.5rem;
       }
+
       .save-the-date-font {
-        font-family: "Cinzel", serif;
         font-weight: 700;
         font-size: 2.5rem;
       }
 
-      /* --- COVER SECTION --- */
+      /* --- STYLE KOMPONEN LAINNYA --- */
       #cover {
         position: fixed;
         top: 0;
@@ -81,7 +101,6 @@
         transition: transform 1s ease-in-out;
       }
 
-      /* Elements */
       .separator-line {
         height: 1px;
         background-color: #333;
@@ -89,7 +108,6 @@
         margin: 15px auto;
       }
 
-      /* STYLING ACARA */
       .location-box {
         border: 2px solid #555;
         padding: 20px;
@@ -97,8 +115,10 @@
         background: rgba(255, 255, 255, 0.5);
         position: relative;
       }
+
       .btn-location,
       .btn-rsvp {
+        font-family: var(--font-body); /* Pastikan tombol pakai Poppins */
         background-color: #666;
         color: white;
         border: none;
@@ -110,13 +130,13 @@
         border-radius: 4px;
         transition: 0.3s;
       }
+
       .btn-location:hover,
       .btn-rsvp:hover {
         background-color: #444;
         color: white;
       }
 
-      /* RSVP Section */
       .rsvp-card {
         background: rgba(255, 255, 255, 0.8);
         border-radius: 10px;
@@ -124,20 +144,16 @@
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       }
 
-      /* --- STYLE TAMBAHAN KHUSUS PILIHAN HADIR/TIDAK (Radio Custom) --- */
+      /* Custom Radio Button */
       .option-group {
         display: flex;
         gap: 15px;
         justify-content: center;
         margin-bottom: 20px;
       }
-
-      /* Sembunyikan radio button asli */
       .option-input {
         display: none;
       }
-
-      /* Tampilan Tombol Pilihan */
       .option-label {
         flex: 1;
         padding: 15px;
@@ -152,14 +168,13 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        font-family: var(--font-body);
       }
-
       .option-label i {
         font-size: 1.5rem;
         margin-bottom: 5px;
       }
 
-      /* Efek saat tombol "Hadir" dipilih */
       #hadir:checked + .lbl-hadir {
         border-color: #28a745;
         background-color: #e8f5e9;
@@ -167,8 +182,6 @@
         transform: scale(1.05);
         box-shadow: 0 5px 15px rgba(40, 167, 69, 0.2);
       }
-
-      /* Efek saat tombol "Tidak Hadir" dipilih */
       #tidak:checked + .lbl-tidak {
         border-color: #dc3545;
         background-color: #f8d7da;
@@ -176,9 +189,7 @@
         transform: scale(1.05);
         box-shadow: 0 5px 15px rgba(220, 53, 69, 0.2);
       }
-      /* ------------------------------------------------------------- */
 
-      /* Utilities */
       .section-padding {
         padding: 80px 0;
       }
@@ -212,9 +223,9 @@
     <section id="cover">
       <div class="container" data-aos="zoom-in">
         <h4>The Wedding of</h4>
-        <h1 class="display-4 mb-2">Furqan & Masruroh</h1>
+        <h1 class="display-4 mb-2 cover-names">Furqan & Masruroh</h1>
         <h4 class="font-aesthetic mb-2">&</h4>
-        <h1 class="display-4 mb-4">Asyirah & Asrori</h1>
+        <h1 class="display-4 mb-4 cover-names">Asyirah & Asrori</h1>
 
         <p style="font-size: 12px">
           Tanpa mengurangi rasa hormat, perkenankan kami mengundang
@@ -251,10 +262,8 @@
             <div class="separator-line w-50 mb-3"></div>
             <h2 class="bismillah mb-4">Bismillahirrahmanirrahim</h2>
             <div class="separator-line w-50 mt-3"></div>
-            <p
-              class="px-md-5 fst-italic mt-4"
-              style="font-family: 'Cinzel', serif"
-            >
+
+            <p class="px-md-5 fst-italic mt-4 quran-font">
               "Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan
               pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu
               merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta
@@ -285,7 +294,12 @@
                 <p class="mb-0">Bapak H. Mawardi</p>
                 <p>& Ibu HJ. Siti Munawarah (almh)</p>
 
-                <div class="font-aesthetic my-2" style="font-size: 2rem">&</div>
+                <div
+                  class="font-aesthetic my-2"
+                  style="font-size: 2rem; color: #333"
+                >
+                  &
+                </div>
 
                 <h2
                   class="font-aesthetic mb-2"
@@ -320,7 +334,12 @@
                 <p class="mb-0">Bapak H. Mawardi</p>
                 <p>& Ibu HJ. Siti Munawarah (almh)</p>
 
-                <div class="font-aesthetic my-2" style="font-size: 2rem">&</div>
+                <div
+                  class="font-aesthetic my-2"
+                  style="font-size: 2rem; color: #333"
+                >
+                  &
+                </div>
 
                 <h2
                   class="font-aesthetic mb-2"
@@ -378,7 +397,7 @@
                   <i
                     class="fas fa-map-marker-alt fa-2x mb-3 text-secondary"
                   ></i>
-                  <h5 style="font-family: 'Cinzel', serif; font-weight: bold">
+                  <h5 class="location-title fw-bold">
                     Gedung Dr. Berbudi RS. Tadjuddin Chalid
                   </h5>
                   <p class="mb-2">
@@ -400,7 +419,7 @@
 
               <div class="location-box mt-4">
                 <i class="fas fa-map-marker-alt fa-2x mb-3 text-secondary"></i>
-                <h5 style="font-family: 'Cinzel', serif; font-weight: bold">
+                <h5 class="location-title fw-bold">
                   Gedung Dr. Berbudi RS. Tadjuddin Chalid
                 </h5>
                 <p class="mb-2">
@@ -557,7 +576,6 @@
       AOS.init({ duration: 1000, once: true });
 
       // 1. FUNGSI UNTUK MENGAMBIL NAMA DARI URL (VERSI HASH #)
-      // Contoh link: undangan.html#Rasyihan
       let namaTamu = window.location.hash.substring(1);
       namaTamu = decodeURIComponent(namaTamu);
 
@@ -568,7 +586,6 @@
         namaContainer.innerText = namaTamu;
         inputNamaForm.value = namaTamu;
       } else {
-        // Jika link dibuka tanpa nama, izinkan tamu ketik sendiri
         inputNamaForm.removeAttribute("readonly");
         inputNamaForm.style.backgroundColor = "white";
       }
@@ -600,7 +617,6 @@
       }
 
       // 2. FUNGSI KIRIM KE GOOGLE SHEETS
-      // Link Script ini tetap sesuai dengan yang terakhir kamu pakai
       const scriptURL =
         "https://script.google.com/macros/s/AKfycbyhqAd9swURgaRuOLX_n4oHBc_4dF1nj0lXaBcUWbUNT-Pw_jIzKKF885wwr1GybI7a/exec";
 
@@ -611,10 +627,8 @@
       if (form) {
         form.addEventListener("submit", (e) => {
           e.preventDefault();
-
           btnKirim.classList.toggle("d-none");
           btnLoading.classList.toggle("d-none");
-
           fetch(scriptURL, { method: "POST", body: new FormData(form) })
             .then((response) => {
               btnKirim.classList.toggle("d-none");
